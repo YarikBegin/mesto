@@ -1,0 +1,10 @@
+.profile__info_place_top {
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+@media screen and (max-width:767px) {
+  .profile__info_place_top {
+    max-width: 282px;
+  }
+}
