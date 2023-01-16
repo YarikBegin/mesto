@@ -21,3 +21,12 @@
 @import url(../blocks/card/__button-like/card__button-like.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__input/_name/popup__input_name.css);
+@import url(../blocks/popup/__input/_about-me/popup__input_about-me.css);
+@import url(../blocks/popup/__button-submit/popup__button-submit.css);
+@import url(../blocks/popup/__button-close/popup__button-close.css);
