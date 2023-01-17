@@ -1,10 +1,10 @@
-.profile__place_top {
+.profile__row-top {
   display:flex;
   justify-content: space-between;
   align-items: baseline;
 }
 @media screen and (max-width:767px) {
-  .profile__place_top {
+  .profile__row-top {
     max-width: 282px;
   }
 }
