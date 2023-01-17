@@ -12,20 +12,20 @@
     <div class="logo"></div>
   </header>
   <main class="content">
-    <section class="profile">
+    <section class="profile" aria-label="секция редактирования профиля">
       <div class="profile__align">
         <img class="profile__avatar" alt="Аватар" src="./images/Avatar.svg">
         <div class="profile__info">
           <div class="profile__info_place_top">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button"></button>
+            <button class="profile__edit-button" type="button" aria-label="кнопка редактирования профиля"></button>
           </div>
           <p class="profile__about-me">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__add-button"></button>
+      <button class="profile__add-button" type="button"></button>
     </section>
-    <section class="elements">
+    <section class="elements" aria-label="секция с фотографиями">
       <article class="card">
         <img class="card__image" alt="Фото Карачаевск" src="./images/karachaevsk.svg">
         <div class="card__align">
@@ -71,7 +71,7 @@
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__copyright">&#169; 2020. Mesto Russia</p>
+    <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
   </footer>
   <div class="popup">
     <div class="popup__container">
@@ -84,5 +84,6 @@
       <button class="popup__button-close" aria-label="закрыть" type="button"></button>
     </div>
   </div>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

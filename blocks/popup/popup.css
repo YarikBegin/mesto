@@ -1,10 +1,9 @@
 .popup {
- /*display: none;*/
+  display: none;
  position: fixed;
- display: flex;
+ display: none;
  justify-content: center;
  align-items: center;
-
  inset: 0;
  z-index: 2;
 }
