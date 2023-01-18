@@ -2,17 +2,17 @@
   padding-top: 66px;
   padding-bottom: 60px;
   max-width: 880px;
-  height: 18px;
   margin: 0 auto;
 }
+
 @media screen and (max-width:1024px) {
   .footer {
     max-width: 581px;
   }
 }
+
 @media screen and (max-width:600px) {
-  .footer{
-    height: 14px;
+  .footer {
     padding-top: 48px;
     padding-bottom: 36px;
     max-width: 282px;

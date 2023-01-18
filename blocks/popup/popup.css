@@ -1,11 +1,12 @@
 .popup {
- position: fixed;
- display: none;
- justify-content: center;
- align-items: center;
- inset: 0;
- z-index: 2;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  z-index: 2;
 }
+
 .popup::before {
   content: '';
   background-color: #000;

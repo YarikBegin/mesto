@@ -1,6 +1,6 @@
 .card__image {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    aspect-ratio: 1/1;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  aspect-ratio: 1/1;
 }

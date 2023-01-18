@@ -5,6 +5,7 @@
   font-weight: 400;
   color: #545454;
 }
+
 @media screen and (max-width:600px) {
   .footer__copyright {
     font-size: 14px;

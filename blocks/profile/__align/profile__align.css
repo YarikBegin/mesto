@@ -1,6 +1,7 @@
 .profile__align {
   display: flex;
 }
+
 @media screen and (max-width:767px) {
   .profile__align {
     max-width: 282px;

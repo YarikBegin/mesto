@@ -9,6 +9,7 @@
   overflow: hidden;
   padding-bottom: 10px;
 }
+
 @media screen and (max-width:767px) {
   .profile__about-me {
     font-size: 14px;

@@ -3,18 +3,21 @@
   padding: 0;
   width: 24px;
   height: 24px;
-  background-image: url(../../../images/Vector\ 2.svg);
+  background-image: url(../../../images/profile__edit-button.svg);
   background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 10px 10px;
   border: 1px solid rgba(255, 255, 255, 1);
 }
+
 .profile__edit-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
+
 @media screen and (max-width:767px) {
-  .profile__edit-button{
+  .profile__edit-button {
     margin-right: 18px;
     width: 18px;
     height: 18px;

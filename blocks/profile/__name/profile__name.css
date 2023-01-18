@@ -9,6 +9,7 @@
   white-space: nowrap;
   padding-bottom: 10px;
 }
+
 @media screen and (max-width:767px) {
   .profile__name {
     padding-left: 46px;
@@ -18,4 +19,3 @@
     padding-bottom: 8px;
   }
 }
-

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+  <link rel="stylesheet" href="./pages/index.css">
 </head>
+
 <body class="page">
   <header class="header">
-    <div class="logo"></div>
+    <img class="logo" src="./images/logo.svg" alt="Логотип Место">
   </header>
   <main class="content">
     <section class="profile" aria-label="секция редактирования профиля">
@@ -30,42 +32,42 @@
         <img class="card__image" alt="Фото Карачаевск" src="./images/karachaevsk.png">
         <div class="card__align">
           <h2 class="card__title">Карачаевск</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img class="card__image" alt="Фото Гора Эльбрус" src="./images/elbrus.png">
         <div class="card__align">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img class="card__image" alt="Фото Домбай" src="./images/dombai.png">
         <div class="card__align">
           <h2 class="card__title">Домбай</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img class="card__image" alt="Фото Мыс Острый" src="./images/ostrii.jpg">
         <div class="card__align">
           <h2 class="card__title">Мыс Острый</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img class="card__image" alt="Фото маяк Анива" src="./images/aniva.jpg">
         <div class="card__align">
           <h2 class="card__title">Маяк Анива</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img class="card__image" alt="Фото Байкал" src="./images/baikal.jpg">
         <div class="card__align">
           <h2 class="card__title">Байкал</h2>
-          <button class="card__button-like"></button>
+          <button class="card__button-like" type="button"></button>
         </div>
       </article>
     </section>
@@ -76,9 +78,9 @@
   <div class="popup">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input type="text" required class="popup__input popup__input_name" placeholder="Имя профиля" name="input-name">
-        <input type="text" required class="popup__input popup__input_about-me" placeholder="Имя профиля" name="input-about-me">
+      <form class="popup__form" name="popup-form">
+        <input type="text" required class="popup__input popup__input_data_name" placeholder="Имя профиля" name="input-name">
+        <input type="text" required class="popup__input popup__input_data_job" placeholder="Имя профиля" name="input-job">
         <button class="popup__button-submit" aria-label="сохранить" type="submit">Сохранить</button>
       </form>
       <button class="popup__button-close" aria-label="закрыть" type="button"></button>
@@ -86,4 +88,5 @@
   </div>
   <script src="./scripts/script.js"></script>
 </body>
+
 </html>

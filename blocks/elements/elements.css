@@ -7,13 +7,16 @@
   row-gap: 20px;
   column-gap: 17px;
 }
+
 @media screen and (max-width:1024px) {
   .elements {
     max-width: 581px;
   }
 }
+
 @media screen and (max-width:600px) {
-  .elements{
+  .elements {
     max-width: 282px;
+    padding-top: 36px;
   }
 }

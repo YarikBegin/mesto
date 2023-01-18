@@ -6,12 +6,14 @@
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width:879px) {
+
+@media screen and (max-width:1024px) {
   .profile {
     padding-left: 19px;
     padding-right: 19px;
   }
 }
+
 @media screen and (max-width:767px) {
   .profile {
     max-width: 282px;

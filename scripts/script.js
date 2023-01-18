@@ -1,10 +1,10 @@
 // Находим форму в DOM
-let formElement = document.querySelector('.popup__form');
+let formElement = document.querySelector('.popup__container');
 let popup = document.querySelector('.popup');
 let profileName = document.querySelector('.profile__name');
 let profileAboutMe = document.querySelector('.profile__about-me');
-let nameInput = formElement.querySelector('.popup__input_name');
-let jobInput = formElement.querySelector('.popup__input_about-me');
+let nameInput = formElement.querySelector('.popup__input_data_name');
+let jobInput = formElement.querySelector('.popup__input_data_job');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelector('.popup__button-close');
 
