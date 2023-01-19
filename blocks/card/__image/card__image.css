@@ -3,4 +3,6 @@
   max-height: 100%;
   display: block;
   aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }

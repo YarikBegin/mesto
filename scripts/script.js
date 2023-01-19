@@ -1,5 +1,5 @@
 // Находим форму в DOM
-let formElement = document.querySelector('.popup__container');
+let formElement = document.querySelector('.popup__form');
 let popup = document.querySelector('.popup');
 let profileName = document.querySelector('.profile__name');
 let profileAboutMe = document.querySelector('.profile__about-me');
