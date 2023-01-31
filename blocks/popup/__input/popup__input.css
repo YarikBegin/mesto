@@ -2,7 +2,7 @@
   padding: 0;
   width: 358px;
   height: 14px;
-  margin: 0 auto 30px auto;
+  margin: 0 36px 30px 36px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-size: 14px;
@@ -18,9 +18,6 @@
 @media screen and (max-width:600px) {
   .popup__input {
     width: 238px;
-  }
-
-  .popup__input:last-of-type {
-    margin-bottom: 45px;
+    margin: 0 22px 45px 22px;
   }
 }

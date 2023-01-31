@@ -7,21 +7,26 @@ let nameInput = formElementProfile.querySelector('.popup__input_data_name');
 let jobInput = formElementProfile.querySelector('.popup__input_data_job');
 let profileName = document.querySelector('.profile__name');
 let profileAboutMe = document.querySelector('.profile__about-me');
-const closeButtonPopupProfile = document.querySelector('.popup__button-close_type_edit-profile');
+const btnClosePopupProfile = document.querySelector('.popup__button-close_type_edit-profile');
 // popup Карточки
 const btnAddCard = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup_type_add');
 const formElementAddCard = document.querySelector('.popup__form_type_add');
 let imageTitleInput = formElementAddCard.querySelector('.popup__input_data_image');
 let urlInput = formElementAddCard.querySelector('.popup__input_data_url');
-const closeButtonPopupAddCard = document.querySelector('.popup__button-close_type_add');
+const btnClosePopupAddCard = document.querySelector('.popup__button-close_type_add');
+// popup Фото
+const popupPhoto = document.querySelector('.popup_type_photo');
+let popupImg = document.querySelector('.popup__photo');
+let popupSubtitle = document.querySelector('.popup__subtitle');
+const btnClosePopupPhoto = document.querySelector('.popup__button-close_type_photo');
 //
 const elements = document.querySelector('.elements');
 const cardTemplate = document.querySelector('.card-template').content;
 const btnLike = document.querySelector('.card__button-like');
+const btnDelete = document.querySelector('.card__delete');
 
 
-renderArrayCard();
 //Функция создания новой карточки
 function createCard(name, link) {
   const cardItem = cardTemplate.querySelector('.card').cloneNode(true);
@@ -48,27 +53,50 @@ function renderArrayCard() {
   })
 };
 // Функция лайка
-function handleCardLike (evt) {
-  if (evt.target.classList.contains('.card__button-like')) {
- evt.target.classList.toggle('.card__button-like_active');
+function handleCardLike(evt) {
+  if (evt.target.classList.contains('card__button-like')) {
+    evt.target.classList.toggle('card__button-like_active');
   }
 };
-function handleSubmitFormAdd (evt) {
+// Функция удаления карточки
+function handleDeleteCard(evt) {
+  if (evt.target.classList.contains('card__delete')) {
+    const eTarget = evt.target.closest('.card');
+    eTarget.remove();
+  }
+};
+// Функция увеличения картинки карточки
+function handleIncreasePhoto(evt) {
+  const eTarget = evt.target.closest('.card__image');
+  if (eTarget) {
+    popupImg.src = eTarget.src;
+    popupImg.alt = eTarget.alt;
+    popupSubtitle.textContent = eTarget.alt;
+    openPopup(popupPhoto);
+  }
+};
+// Функция добавления новой карточки по кнопке создать
+function handleSubmitFormAdd(evt) {
   evt.preventDefault();
   renderNewCard();
   closePopup(popupAddCard);
   evt.target.reset();
 };
-
-
-
-
+// Функция поведения карточки по нажатию на неё
+elements.addEventListener('click', evt => {
+  handleIncreasePhoto(evt);
+  handleDeleteCard(evt);
+  handleCardLike(evt);
+});
+//Функция открытия модального окна
 function openPopup(item) {
   item.classList.add('popup_opened');
 }
+//Функция закрытия модального окна
 function closePopup(item) {
   item.classList.remove('popup_opened');
 }
+// Функция отправки формы submit ред.профиля
 function handleFormSubmit(evt) {
   evt.preventDefault();
   let job = jobInput.value;
@@ -78,12 +106,14 @@ function handleFormSubmit(evt) {
   closePopup(popupProfile);
 }
 
+
+
 // слушатель кнопки '+'
 btnAddCard.addEventListener('click', function () {
   openPopup(popupAddCard);
 });
 // слушатель кнопки закрыть
-closeButtonPopupAddCard.addEventListener('click', function () {
+btnClosePopupAddCard.addEventListener('click', function () {
   closePopup(popupAddCard);
 })
 
@@ -99,11 +129,13 @@ btnEdit.addEventListener('click', function () {
 });
 
 // кнопка 'закрыть' в ред. профиля
-closeButtonPopupProfile.addEventListener('click', function () {
+btnClosePopupProfile.addEventListener('click', function () {
   closePopup(popupProfile);
 }
 );
+// кнопка закрыть ув. картинка
+btnClosePopupPhoto.addEventListener('click', function() {
+  closePopup(popupPhoto);
+});
 
-
-
-
+renderArrayCard();
