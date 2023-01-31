@@ -5,6 +5,7 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
+  background-color: #000;
 }
 .card__image:hover {
   cursor: pointer;
