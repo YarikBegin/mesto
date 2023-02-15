@@ -33,28 +33,44 @@
   <footer class="footer">
     <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
   </footer>
+  <!--Модальное окно редактирования профиля-->
   <div class="popup popup_type_edit-profile">
     <div class="popup__container popup__container_type_edit-profile">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form popup__form_type_edit-profile" name="popup-form">
-        <input type="text" required class="popup__input popup__input_data_name" placeholder="Имя профиля" name="input-name">
-        <input type="text" required class="popup__input popup__input_data_job" placeholder="Имя профиля" name="input-job">
-        <button class="popup__button-submit" aria-label="сохранить" type="submit">Сохранить</button>
+      <form class="popup__form popup__form_type_edit-profile" name="popup-form" novalidate>
+        <fieldset class="popup__set">
+          <label class="popup__field">
+            <input type="text" required class="popup__input popup__input_data_name" placeholder="Имя профиля"
+              name="input-name" minlength="2" maxlength="40">
+            <span class="popup__input-error popup__input-name-error"></span>
+          </label>
+          <label class="popup__field">
+            <input type="text" required class="popup__input popup__input_data_job" placeholder="Имя профиля"
+              name="input-job" minlength="2" maxlength="200">
+              <span class="popup__input-error popup__input-job-error"></span>
+          </label>
+          <button class="popup__button-submit" aria-label="сохранить" type="submit">Сохранить</button>
+        </fieldset>
       </form>
-      <button class="popup__button-close popup__button-close_type_edit-profile" aria-label="закрыть" type="button"></button>
+      <button class="popup__button-close popup__button-close_type_edit-profile" aria-label="закрыть"
+        type="button"></button>
     </div>
   </div>
+  <!--Модальное окно добавления новой карточки-->
   <div class="popup popup_type_add">
     <div class="popup__container popup__container_type_add">
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form popup__form_type_add" name="popup-form">
-        <input type="text" required class="popup__input popup__input_data_image" placeholder="Название" name="input-image">
-        <input type="url" required class="popup__input popup__input_data_url" placeholder="Ссылка на картинку" name="input-url">
+      <form class="popup__form popup__form_type_add" name="popup-form" novalidate>
+        <input type="text" required class="popup__input popup__input_data_image" placeholder="Название"
+          name="input-image" minlength="2" maxlength="30">
+        <input type="url" required class="popup__input popup__input_data_url" placeholder="Ссылка на картинку"
+          name="input-url">
         <button class="popup__button-submit" aria-label="сохранить" type="submit">Создать</button>
       </form>
       <button class="popup__button-close popup__button-close_type_add" aria-label="закрыть" type="button"></button>
     </div>
   </div>
+  <!--Модальное окно увеличение картинки-->
   <div class="popup popup_type_photo overlay">
     <div class="popup__container popup__container_type_photo">
       <img class="popup__photo" alt="#" src="#">
@@ -62,6 +78,7 @@
       <button class="popup__button-close popup__button-close_type_photo" aria-label="закрыть" type="button"></button>
     </div>
   </div>
+  <!--Шаблон карточки-->
   <template class="card-template">
     <article class="card">
       <button class="card__delete" type="button"></button>
@@ -72,6 +89,7 @@
       </div>
     </article>
   </template>
+  <script defer src="./scripts/validate.js"></script>
   <script type="module" src="./scripts/script.js"></script>
 </body>
 
