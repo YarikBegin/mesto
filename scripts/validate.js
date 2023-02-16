@@ -1,19 +1,31 @@
-enableValidation({
+const validationConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
+  submitButtonSelector: '.popup__button-submit',
+  fiedSetSelector: '.popup__set',
+  inactiveButtonClass: '.popup__button-submit_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-});
-function isValid (formElement, inputElement) {
+  errorClass: 'popup__input-error_active',
+};
+const formElement = document.querySelector('.popup__form');
+const inputElement = formElement.querySelector('.popup__input');
+
+
+
+function showInputError (element) {
+    element.classList.add('popup__input_type_error');
+};
+function hideInputError (element) {
+    element.classList.remove('popup__input_type_error');
+};
+function isValid () {
   if (!inputElement.validity.valid) {
-    // showInputError теперь получает параметром форму, в которой
-    // находится проверяемое поле, и само это поле
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    // Если поле не проходит валидацию, покажем ошибку
+    showInputError(inputElement);
   } else {
-    // hideInputError теперь получает параметром форму, в которой
-    // находится проверяемое поле, и само это поле
-    hideInputError(formElement, inputElement);
+    // Если проходит, скроем
+    hideInputError(inputElement);
   }
 };
+
+inputElement.addEventListener('input', isValid);
