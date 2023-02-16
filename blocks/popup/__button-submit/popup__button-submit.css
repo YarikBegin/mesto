@@ -1,7 +1,7 @@
 .popup__button-submit {
   padding: 14px 124px 18px 125px;
   width: 358px;
-  margin: 0 auto 37px;
+  margin: 48px 36px 37px 36px;
   border: none;
   background-color: black;
   color: #fff;
@@ -23,6 +23,6 @@
     font-size: 14px;
     line-height: 17px;
     width: 238px;
-    margin: 0 22px 25px 22px;
+    margin: 45px 22px 25px 22px;
   }
 }

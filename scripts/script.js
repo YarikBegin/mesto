@@ -86,10 +86,14 @@ function handleSubmitFormAdd(evt) {
 //Функция открытия модального окна
 function openPopup(item) {
   item.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupKeydownEsc);
+  document.addEventListener('mousedown', closePopupClickOut);
 }
 //Функция закрытия модального окна
 function closePopup(item) {
   item.classList.remove('popup_opened');
+  document.addEventListener('keydown', closePopupKeydownEsc);
+  document.addEventListener('mousedown', closePopupClickOut);
 }
 // Функция отправки формы submit ред.профиля
 function handleFormSubmit(evt) {
@@ -100,11 +104,32 @@ function handleFormSubmit(evt) {
   profileAboutMe.textContent = job;
   closePopup(popupProfile);
 }
+//Функция закрытия модального окна по нажатию Escape
+function closePopupKeydownEsc(evt) {
+  if(evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  }
+}
+//Функция закрытия модального окна по нажатию на фон
+function closePopupClickOut(evt) {
+  const popupOpen = document.querySelector('.popup_opened');
+  if (evt.target === popupOpen) {
+    if (popupOpen) {
+      closePopup(popupOpen);
+    }
+  }
+}
+// Функция деактивации кнопки сабмита
+function disabledButtonSubmit (popupElement) {
+  const buttonElement = popupElement.querySelector('.popup__button-submit');
+  buttonElement.disabled = true;
+}
 // слушатель кнопки '+'
 btnAddCard.addEventListener('click', function () {
-    imageTitleInput.value = '';
-    urlInput.value = '';
+    formElementAddCard.reset();
     openPopup(popupAddCard);
+    removeValidationErrors(popupAddCard);
+    disabledButtonSubmit(popupAddCard);
 });
 // слушатель кнопки закрыть
 btnClosePopupAddCard.addEventListener('click', function () {
@@ -118,6 +143,9 @@ btnEdit.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileAboutMe.textContent;
   openPopup(popupProfile);
+  removeValidationErrors(popupProfile);
+  disabledButtonSubmit(popupProfile);
+
 });
 // кнопка 'закрыть' в ред. профиля
 btnClosePopupProfile.addEventListener('click', function () {

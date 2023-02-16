@@ -41,13 +41,13 @@
         <fieldset class="popup__set">
           <label class="popup__field">
             <input type="text" required class="popup__input popup__input_data_name" placeholder="Имя профиля"
-              name="input-name" minlength="2" maxlength="40">
-            <span class="popup__input-error popup__input-name-error"></span>
+              name="input-name" id="input-name" minlength="2" maxlength="40">
+            <span class="popup__input-error input-name-error"></span>
           </label>
           <label class="popup__field">
             <input type="text" required class="popup__input popup__input_data_job" placeholder="Имя профиля"
-              name="input-job" minlength="2" maxlength="200">
-              <span class="popup__input-error popup__input-job-error"></span>
+              name="input-job" id="input-job" minlength="2" maxlength="200">
+              <span class="popup__input-error input-job-error"></span>
           </label>
           <button class="popup__button-submit" aria-label="сохранить" type="submit">Сохранить</button>
         </fieldset>
@@ -61,11 +61,19 @@
     <div class="popup__container popup__container_type_add">
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form popup__form_type_add" name="popup-form" novalidate>
+        <fieldset class="popup__set">
+          <label class="popup__field">
         <input type="text" required class="popup__input popup__input_data_image" placeholder="Название"
-          name="input-image" minlength="2" maxlength="30">
+          name="input-image" id="input-image" minlength="2" maxlength="30">
+          <span class="popup__input-error input-image-error"></span>
+        </label>
+          <label class="popup__field">
         <input type="url" required class="popup__input popup__input_data_url" placeholder="Ссылка на картинку"
-          name="input-url">
+          name="input-url" id="input-url">
+          <span class="popup__input-error input-url-error"></span>
+        </label>
         <button class="popup__button-submit" aria-label="сохранить" type="submit">Создать</button>
+      </fieldset>
       </form>
       <button class="popup__button-close popup__button-close_type_add" aria-label="закрыть" type="button"></button>
     </div>
