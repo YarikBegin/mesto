@@ -69,6 +69,7 @@ function toggleButtonState(inputList, buttonElement) {
     buttonElement.disabled = false;
   }
 }
+
 function removeValidationErrors(popupElement) {
   const deleteValid = Array.from(popupElement.querySelectorAll('.popup__input'));
   deleteValid.forEach(function (item) {

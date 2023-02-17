@@ -23,6 +23,7 @@ const btnClosePopupPhoto = document.querySelector('.popup__button-close_type_pho
 //
 const elements = document.querySelector('.elements');
 const cardTemplate = document.querySelector('.card-template').content;
+
 //Функция создания новой карточки
 function createCard(name, link) {
   const cardItem = cardTemplate.querySelector('.card').cloneNode(true);
