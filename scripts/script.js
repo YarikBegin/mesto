@@ -145,7 +145,6 @@ btnEdit.addEventListener('click', function () {
   openPopup(popupProfile);
   removeValidationErrors(popupProfile);
   disabledButtonSubmit(popupProfile);
-
 });
 // кнопка 'закрыть' в ред. профиля
 btnClosePopupProfile.addEventListener('click', function () {
