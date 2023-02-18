@@ -97,7 +97,7 @@ function closePopup(item) {
   document.addEventListener('mousedown', closePopupClickOut);
 }
 // Функция отправки формы submit ред.профиля
-function handleFormSubmit(evt) {
+function submitEditProfileForm(evt) {
   evt.preventDefault();
   const job = jobInput.value;
   const name = nameInput.value;
@@ -120,32 +120,28 @@ function closePopupClickOut(evt) {
     }
   }
 }
-// Функция деактивации кнопки сабмита
-function disabledButtonSubmit (popupElement) {
-  const buttonElement = popupElement.querySelector('.popup__button-submit');
-  buttonElement.disabled = true;
-}
+
 // слушатель кнопки '+'
 btnAddCard.addEventListener('click', function () {
     formElementAddCard.reset();
+    removeValidationErrors(popupAddCard, validationConfig);
+    disabledButtonSubmit(popupAddCard, validationConfig);
     openPopup(popupAddCard);
-    removeValidationErrors(popupAddCard);
-    disabledButtonSubmit(popupAddCard);
 });
 // слушатель кнопки закрыть
 btnClosePopupAddCard.addEventListener('click', function () {
   closePopup(popupAddCard);
 })
 // слушатель кнопки 'сохранить' в редактировании профиля
-formElementProfile.addEventListener('submit', handleFormSubmit);
+formElementProfile.addEventListener('submit', submitEditProfileForm);
 formElementAddCard.addEventListener('submit', handleSubmitFormAdd);
 // слушатель кнопки 'ред. профиля'
 btnEdit.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileAboutMe.textContent;
   openPopup(popupProfile);
-  removeValidationErrors(popupProfile);
-  disabledButtonSubmit(popupProfile);
+  removeValidationErrors(popupProfile, validationConfig);
+  disabledButtonSubmit(popupProfile, validationConfig);
 });
 // кнопка 'закрыть' в ред. профиля
 btnClosePopupProfile.addEventListener('click', function () {
