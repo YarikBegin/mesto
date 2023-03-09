@@ -16,7 +16,6 @@ export class FormValidator {
     this._inputList = this._inputsList();
     this._buttonElement = this._validElement.querySelector(this._config.submitButtonSelector);
   }
-
   _inputsList() {
     return Array.from(this._validElement.querySelectorAll(this._config.inputSelector));
   }
