@@ -1,10 +1,10 @@
 import { addValidationConfig, FormValidator } from './FormValidator.js'
-import { Card } from './cards.js';
+import { Card } from './Сards.js';
 import { initialCards } from './initialCards.js';
 // popup профиля
 const btnEdit = document.querySelector('.profile__edit-button');
 const popupProfile = document.querySelector('.popup_type_edit-profile');
-const formElementProfile = document.querySelector('.popup__form_type_edit-profile');
+const formElementProfile = document.forms['profile-form'];
 const nameInput = formElementProfile.querySelector('.popup__input_data_name');
 const jobInput = formElementProfile.querySelector('.popup__input_data_job');
 const profileName = document.querySelector('.profile__name');
@@ -13,7 +13,7 @@ const btnClosePopupProfile = document.querySelector('.popup__button-close_type_e
 // popup Карточки
 const btnAddCard = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup_type_add');
-const formElementAddCard = document.querySelector('.popup__form_type_add');
+const formElementAddCard = document.forms['card-form'];
 const imageTitleInput = formElementAddCard.querySelector('.popup__input_data_image');
 const urlInput = formElementAddCard.querySelector('.popup__input_data_url');
 const btnClosePopupAddCard = document.querySelector('.popup__button-close_type_add');
@@ -36,19 +36,16 @@ function addNewCard(element) {
 //Функция рендера карточек из массива
 function renderArrayCard() {
   initialCards.forEach((item) => {
-    document.querySelector('.elements').append(addNewCard(item));
+    elements.append(addNewCard(item));
   });
 };
 renderArrayCard();
 // Функция увеличения картинки карточки
-export function handleIncreasePhoto(evt, cardImage) {
-  const eTarget = evt.target.closest('.card__image');
-  if (eTarget) {
+export function handleIncreasePhoto(cardImage) {
     popupImg.src = cardImage.src;
     popupImg.alt = cardImage.alt;
     popupSubtitle.textContent = cardImage.alt;
     openPopup(popupPhoto);
-  }
 };
 // Функция добавления новой карточки по кнопке создать
 function handleSubmitFormAdd(evt) {
@@ -66,8 +63,8 @@ function openPopup(item) {
 //Функция закрытия модального окна
 function closePopup(item) {
   item.classList.remove('popup_opened');
-  document.addEventListener('keydown', closePopupKeydownEsc);
-  document.addEventListener('mousedown', closePopupClickOut);
+  document.removeEventListener('keydown', closePopupKeydownEsc);
+  document.removeEventListener('mousedown', closePopupClickOut);
 }
 // Функция отправки формы submit ред.профиля
 function submitEditProfileForm(evt) {
@@ -80,17 +77,15 @@ function submitEditProfileForm(evt) {
 }
 //Функция закрытия модального окна по нажатию Escape
 function closePopupKeydownEsc(evt) {
-  if (evt.key === 'Escape') {
-    closePopup(document.querySelector('.popup_opened'));
+  const test = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape' && test)  {
+    closePopup(test);
   }
 }
 //Функция закрытия модального окна по нажатию на фон
 function closePopupClickOut(evt) {
-  const popupOpen = document.querySelector('.popup_opened');
-  if (evt.target === popupOpen) {
-    if (popupOpen) {
-      closePopup(popupOpen);
-    }
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
   }
 }
 // слушатель кнопки '+'
