@@ -1,5 +1,5 @@
 import { addValidationConfig, FormValidator } from './FormValidator.js'
-import { Card } from './Cards.js';
+import { Card } from './cards.js';
 import { initialCards } from './initialCards.js';
 // popup профиля
 const btnEdit = document.querySelector('.profile__edit-button');
