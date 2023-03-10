@@ -9,6 +9,7 @@ export function addValidationConfig() {
     errorClass: 'popup__input-error_active'
   };
 };
+
 export class FormValidator {
   constructor(config, validElement) {
     this._config = config;

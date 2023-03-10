@@ -24,7 +24,7 @@ const popupSubtitle = document.querySelector('.popup__subtitle');
 const btnClosePopupPhoto = document.querySelector('.popup__button-close_type_photo');
 const elements = document.querySelector('.elements');
 const validationConfig = addValidationConfig();
-//
+
 function renderCard(cardElement) {
   elements.prepend(cardElement);
 }

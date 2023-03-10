@@ -1,5 +1,4 @@
 import { handleIncreasePhoto } from './script.js'
-
 export class Card {
   constructor(element, templateSelector) {
     this._templateSelector = templateSelector;

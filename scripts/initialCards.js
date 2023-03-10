@@ -1,4 +1,3 @@
-
 export const initialCards = [
   {
     name: 'Архыз',
