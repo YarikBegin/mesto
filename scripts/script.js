@@ -1,5 +1,5 @@
 import { addValidationConfig, FormValidator } from './FormValidator.js'
-import { Card } from './Сards.js';
+import { Card } from './Сard.js';
 import { initialCards } from './initialCards.js';
 // popup профиля
 const btnEdit = document.querySelector('.profile__edit-button');
@@ -77,9 +77,9 @@ function submitEditProfileForm(evt) {
 }
 //Функция закрытия модального окна по нажатию Escape
 function closePopupKeydownEsc(evt) {
-  const test = document.querySelector('.popup_opened');
-  if (evt.key === 'Escape' && test)  {
-    closePopup(test);
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    openedPopup && closePopup(openedPopup);
   }
 }
 //Функция закрытия модального окна по нажатию на фон

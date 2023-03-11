@@ -14,10 +14,10 @@ export class FormValidator {
   constructor(config, validElement) {
     this._config = config;
     this._validElement = validElement;
-    this._inputList = this._inputsList();
+    this._inputList = this._getInputsList();
     this._buttonElement = this._validElement.querySelector(this._config.submitButtonSelector);
   }
-  _inputsList() {
+  _getInputsList() {
     return Array.from(this._validElement.querySelectorAll(this._config.inputSelector));
   }
   _hasInvalidInput() {
