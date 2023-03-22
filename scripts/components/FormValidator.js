@@ -1,14 +1,4 @@
-export function addValidationConfig() {
-  return {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button-submit',
-    fiedSetSelector: '.popup__set',
-    inactiveButtonClass: 'popup__button-submit_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_active'
-  };
-};
+
 
 export class FormValidator {
   constructor(config, validElement) {
