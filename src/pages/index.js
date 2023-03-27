@@ -1,3 +1,5 @@
+import '../pages/index.css';
+
 import { Card } from '../scripts/components/Сard.js';
 import { addValidationConfig, initialCards } from '../scripts/utils/constants.js';
 import { FormValidator } from '../scripts/components/FormValidator.js';
