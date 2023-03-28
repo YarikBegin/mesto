@@ -29,7 +29,7 @@ const cardsArray = initialCards();
 
 function exportEditProfileValues() {
   const data = profileUserInfo.getUserInfo();
-  nameInput.value = data.user;
+  nameInput.value = data.name;
   jobInput.value = data.job;
 }
 

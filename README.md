@@ -17,6 +17,8 @@
 * БЭМ Nested
 * JavaScript
 * DOM
+* ООП
+* Webpack
 
 **Figma**
 

@@ -16,12 +16,12 @@ export default class PopupWithForm extends Popup {
     })
   }
   _getInputValues () {
-    const formData = new FormData(this._popupForm); // создаём объект FormData, передаём в него элемент формы
-    const name = formData.get('input-image');
-    const link = formData.get('input-url');
-    const user = formData.get('input-name');
-    const job = formData.get('input-job');
-    return { name, link, user, job };
+  this._inputList = this._popup.querySelectorAll('.popup__input');
+  this._formValues = {};
+  this._inputList.forEach(input => {
+    this._formValues[input.name] = input.value;
+  });
+  return this._formValues;
   }
   close () {
     super.close();
