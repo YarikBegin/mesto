@@ -7,11 +7,12 @@
   background-color: #fff;
   box-sizing: content-box;
   border: none;
-  margin: 5px 5px 0 0;
   flex: none;
+  align-self: center;
 }
 
 .card__button-like:hover {
   opacity: 0.5;
   cursor: pointer;
 }
+

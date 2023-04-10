@@ -13,7 +13,9 @@
   <main class="content">
     <section class="profile" aria-label="секция редактирования профиля">
       <div class="profile__align">
+        <button class="profile__avatar-button" type="button">
         <img class="profile__avatar" alt="Аватар" src="<%=require('./images/Avatar.svg')%>">
+      </button>
         <div class="profile__info">
           <div class="profile__row-top">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -84,7 +86,32 @@
     </div>
   </div>
   <!--Модальное окно редактирования аватара-->
+  <div class="popup popup_type_avatar">
+    <div class="popup__container popup__container_type_avatar">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="popup__form popup__form_type_avatar" name="avatar-form" novalidate>
+        <fieldset class="popup__set">
+          <label class="popup__field">
+            <input type="url" required class="popup__input popup__input_data_avatar" placeholder="Ссылка на аватар"
+          name="link" id="input-url">
+          <span class="popup__input-error input-url-error"></span>
+          </label>
+          <button class="popup__button-submit" aria-label="сохранить" type="submit">Сохранение...</button>
+        </fieldset>
+      </form>
+      <button class="popup__button-close popup__button-close_type_avatar" aria-label="закрыть" type="button"></button>
+    </div>
+  </div>
   <!--Модальное окно удаления карточки-->
+  <div class="popup popup_type_delete">
+    <div class="popup__container popup__container_type_delete">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <form class="popup__form popup__form_type_delete" name="delete-form" novalidate>
+        <button class="popup__button-submit" aria-label="сохранить" type="submit">Да</button>
+      </form>
+      <button class="popup__button-close popup__button-close_type_delete" aria-label="закрыть" type="button"></button>
+    </div>
+  </div>
   <!--Шаблон карточки-->
   <template class="card-template">
     <article class="card">
@@ -92,7 +119,10 @@
       <img class="card__image" alt="#" src='#' >
       <div class="card__align">
         <h2 class="card__title"></h2>
+        <div>
         <button class="card__button-like" type="button"></button>
+        <p class="card__counter"></p>
+      </div>
       </div>
     </article>
   </template>
