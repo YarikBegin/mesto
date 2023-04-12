@@ -9,12 +9,12 @@ class Api {
   getUserInform() {
     return fetch(`${this.url}/users/me`, { headers: this.headers })
       .then(this._checkResult)
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
   getInitialCards() {
     return fetch(`${this.url}/cards`, { headers: this.headers })
       .then(this._checkResult)
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
   editProfile({ name, job }) {
     return fetch(`${this.url}/users/me`, {
@@ -26,7 +26,7 @@ class Api {
       }),
     })
       .then(this._checkResult)
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
   addNewCard({ name, link }) {
     return fetch(`${this.url}/cards`, {

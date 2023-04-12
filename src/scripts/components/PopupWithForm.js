@@ -13,24 +13,8 @@ export default class PopupWithForm extends Popup {
     this._popupForm = this._popup.querySelector('.popup__form');
     this._popupForm.addEventListener('submit', evt => {
       evt.preventDefault();
-      this.toggleBtnContent();
       this._submitFunction(this._getInputValues());
     })
-  }
-  toggleBtnContent() {
-    const content = this._btnSubmit.innerText;
-    if (content === 'Сохранить') {
-      this._btnSubmit.innerText = 'Сохранение...';
-    }
-    if (content === 'Сохранение...') {
-      this._btnSubmit.innerText = 'Сохранить';
-    }
-    if (content === 'Создать') {
-      this._btnSubmit.innerText = 'Создание...';
-    }
-    if (content === 'Создание...') {
-      this._btnSubmit.innerText = 'Создать';
-    }
   }
   _getInputValues () {
   this._formValues = {};

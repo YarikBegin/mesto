@@ -17,20 +17,7 @@ export default class PopupWithSubmit extends Popup {
     this._popupForm = this._popup.querySelector('.popup__form');
     this._popupForm.addEventListener('submit', e => {
       e.preventDefault();
-      this.toggleBtnContent();
       this._funcSubmit(this._card);
     });
   }
-
-  toggleBtnContent() {
-    const content = this._btnSubmit.innerText;
-    if (content === 'Да') {
-      this._btnSubmit.innerText = 'Удаление...';
-    }
-    if (content === 'Удаление...') {
-      this._btnSubmit.innerText = 'Да';
-    }
-  }
-
-
 }

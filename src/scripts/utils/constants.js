@@ -9,8 +9,22 @@ const nameInput = popupProfile.querySelector('.popup__input_data_name');
 const jobInput = popupProfile.querySelector('.popup__input_data_job');
 const btnAvatarEdit = document.querySelector('.profile__avatar-button');
 const formElementAvatar = document.forms['avatar-form'];
-
-
+const btnSubmitAvatar = document.querySelector('.popup__button-submit-avatar');
+const btnSubmitProfile = document.querySelector('.popup__button-submit-profile');
+const btnSubmitAddCard = document.querySelector('.popup__button-submit-card');
+const btnSubmitDeleteCard = document.querySelector('.popup__button-submit-delete');
+const contentBtnAvatarOrProfile = {
+  start: 'Сохранить',
+  loading: 'Сохранение...'
+};
+const contentBtnAddCard = {
+  start: 'Создать',
+  loading: 'Создание...'
+};
+const contentBtnDeleteCard = {
+  start: 'Да',
+  loading: 'Удаление...'
+};
 export {
   btnEdit,
   btnAddCard,
@@ -20,6 +34,13 @@ export {
   nameInput,
   jobInput,
   btnAvatarEdit,
+  contentBtnAvatarOrProfile,
+  contentBtnAddCard,
+  contentBtnDeleteCard,
+  btnSubmitAvatar,
+  btnSubmitProfile,
+  btnSubmitAddCard,
+  btnSubmitDeleteCard,
 };
 
 export function addValidationConfig() {
@@ -33,4 +54,10 @@ export function addValidationConfig() {
     errorClass: 'popup__input-error_active'
   };
 };
-
+export function toggleLoading(btnSubmit, content, isLoading) {
+  if (isLoading) {
+    btnSubmit.textContent = content.loading;
+  } else {
+    btnSubmit.textContent = content.start;
+  }
+}

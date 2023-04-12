@@ -21,10 +21,10 @@ export class Card {
     this._templateSelector = templateSelector;
     this._handleIncreasePhoto = handleIncreasePhoto;
     this._cardElement = this._createTemplate();
+    this._cardDelete = this._cardElement.querySelector('.card__delete');
     this._cardImage = this._cardElement.querySelector('.card__image');
     this._cardTitle = this._cardElement.querySelector('.card__title');
     this._cardLike = this._cardElement.querySelector('.card__button-like');
-    this._cardDelete = this._cardElement.querySelector('.card__delete');
     this._cardCounter = this._cardElement.querySelector('.card__counter');
     this._generateCard();
     this.deleteBtnBasket();
@@ -61,10 +61,10 @@ export class Card {
   _setEventListeners() {
     this._cardLike.addEventListener('click', () => {
       if (this._checkLike(this._likesData)) {
-        this.handleCardLikeBtn('DELETE');
+        this.handleCardLikeBtn(this._id, 'DELETE');
       }
       else {
-        this.handleCardLikeBtn('PUT');
+        this.handleCardLikeBtn(this._id, 'PUT');
       }
     });
     if (this._cardDelete) {
